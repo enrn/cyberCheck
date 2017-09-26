@@ -1,0 +1,76 @@
+package com.java.ControllerServlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Register
+ */
+@WebServlet("/Register")
+public class Register extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	
+    public Register() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PrintWriter out=response.getWriter();
+		
+		String fullname=request.getParameter("fullName");
+		String username=request.getParameter("userName");
+		String password=request.getParameter("password");
+	//	out.println(fullname+username+password+"*************");
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cyberSolve","root","*1Narayan1*");
+			
+			PreparedStatement pst=con.prepareStatement("insert into users values(?,?,?)");
+			pst.setString(1, fullname);
+			pst.setString(2, username);
+			pst.setString(3, password);
+		
+			int check=pst.executeUpdate();
+			//out.println(check);
+			if(check > 0){
+				out.println("Successfully inserted");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

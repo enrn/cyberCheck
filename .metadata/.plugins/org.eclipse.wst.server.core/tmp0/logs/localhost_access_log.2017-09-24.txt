@@ -1,0 +1,6 @@
+127.0.0.1 - - [24/Sep/2017:18:12:08 -0500] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [24/Sep/2017:18:12:08 -0500] "GET /myFirstWebProject/ HTTP/1.1" 404 1091
+127.0.0.1 - - [24/Sep/2017:18:30:49 -0500] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [24/Sep/2017:18:30:49 -0500] "GET /StudyTonightExamples/ HTTP/1.1" 200 585
+0:0:0:0:0:0:0:1 - - [24/Sep/2017:18:31:10 -0500] "GET /StudyTonightExamples/Register?fullName=yadav&userName=dhakal&password=1234&cpassword=2234 HTTP/1.1" 200 502
+0:0:0:0:0:0:0:1 - - [24/Sep/2017:18:31:16 -0500] "GET /StudyTonightExamples/Validation?userName=gj&password=jd HTTP/1.1" 200 266

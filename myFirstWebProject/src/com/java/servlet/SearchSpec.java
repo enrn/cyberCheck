@@ -1,0 +1,42 @@
+package com.java.servlet;
+
+public class SearchSpec {
+
+	private String baseUrl, name;
+	private static SearchSpec[] commonSpec = { new SearchSpec("google", "https://www.google.com/search?q="),
+			new SearchSpec("bing", "https://www.bing.com/search?q="),
+			new SearchSpec("yahoo", "https://www.yahoo.com/search?p="),
+			new SearchSpec("ebay", "https://www.ebay.com/search?t=")
+
+	};
+
+	public SearchSpec(String name, String url) {
+		this.name = name;
+		this.baseUrl = url;
+	}
+
+	public static SearchSpec[] getCommonSpec() {
+		return commonSpec;
+	}
+
+	public static void setCommonSpec(SearchSpec[] commonSpec) {
+		SearchSpec.commonSpec = commonSpec;
+	}
+
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="/myFirstWebProject/ShowServletParam" method="get">
+	Name:<input type="text" name="firstName">
+	age:<input type="text" name="age">
+	Address:<textarea rows="10" cols="5"></textarea>
+	
+	
+<input type="submit">
+
+</form>
+</body>
+</html>

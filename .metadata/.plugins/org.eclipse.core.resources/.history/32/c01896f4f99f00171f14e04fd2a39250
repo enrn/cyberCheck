@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search Engine</title>
+</head>
+<body>
+	<form action="/myFirstWebProject/SearchServlet/" method="get">
+		<table border=1>
+			<tr>	
+				<td>Search:<input type="text" name="name" value="google"></td>
+				<td>Search:<input type="text" name="name" value="ebay"></td>
+				<td>Search:<input type="text" name="name" value="yahoo"></td>
+				<td>Search:<input type="text" name="name" value="bing"></td>
+				<input type="submit">
+				</tr>
+		
+		</table>
+	
+	</form>
+
+</body>
+</html>
